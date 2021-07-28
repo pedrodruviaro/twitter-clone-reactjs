@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Menu from './objects/Menu'
+import MainTweets from './objects/MainTweets'
+import Aside from './objects/Aside'
+
+const MainContent = styled.main`
+  width: 100%;
+  height: 100vh;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 250px 1fr 350px;
+  grid-template-areas: "menu main aside";
+
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContent>
+      <Menu />
+      <MainTweets />
+      <Aside />
+    </MainContent>
   );
 }
 
